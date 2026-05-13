@@ -1,0 +1,63 @@
+\documentclass[a4papert]{article}
+\usepackage{listings}
+
+\usepackage{xcolor}
+
+% --- Colori personalizzati ---
+\definecolor{haskellbg}{RGB}{250,250,248}
+\definecolor{haskellpurple}{RGB}{170,0,255}
+\definecolor{haskellgreen}{RGB}{63,127,95}
+\definecolor{haskellblue}{RGB}{0,0,180}
+\definecolor{haskellgray}{RGB}{150,150,150}
+\definecolor{ghciprompt}{RGB}{150,0,0}
+
+% --- Definizione linguaggio Haskell ---
+\lstdefinelanguage{Haskell}{
+  morekeywords={
+    case,of,if,then,else,let,in,where,do,module,import,
+    data,type,newtype,class,instance,deriving,as,hiding,qualified
+  },
+  sensitive=true,
+  morecomment=[l]--,
+  morecomment=[n]{\{-}{-\}},
+  morestring=[b]",
+}
+
+% --- Stile per codice Haskell ---
+\lstdefinestyle{haskellstyle}{
+  language=Haskell,
+  backgroundcolor=\color{haskellbg},
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{haskellpurple}\bfseries,
+  commentstyle=\color{haskellgreen}\itshape,
+  stringstyle=\color{haskellblue},
+  numbers=left,
+  numberstyle=\tiny\color{haskellgray},
+  stepnumber=1,
+  numbersep=8pt,
+  showstringspaces=false,
+  breaklines=true,
+  frame=single,
+  rulecolor=\color{gray!50},
+  tabsize=2,
+  captionpos=b
+}
+
+% --- Stile per sessioni GHCi ---
+\lstdefinestyle{ghcistyle}{
+  language=Haskell,
+  backgroundcolor=\color{haskellbg},
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{haskellpurple}\bfseries,
+  commentstyle=\color{haskellgreen}\itshape,
+  stringstyle=\color{haskellblue},
+  moredelim=**[is][\color{ghciprompt}]{@}{@}, % evidenzia prompt
+  showstringspaces=false,
+  breaklines=true,
+  frame=single,
+  rulecolor=\color{gray!50},
+  tabsize=2,
+  captionpos=b
+}
+
+\begin{document}
